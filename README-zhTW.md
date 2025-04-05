@@ -4,6 +4,7 @@
 - Circle，基於 CCTP2.0 讓用戶可以在任意鏈將資金提領出來或是存入合約來贊助
 - 1inch，用戶可以選擇用什麼代幣來支付，會先轉為 USDC / 換為可生息的利率
 - World Mini App
+- 1inch funsion+ 是否能夠發 postMessage
 
 ## 主題情境 (下述二選一?)
 
@@ -19,34 +20,45 @@
 #### 被贊助者提領資金
 被贊助者提領時，會根據 vesting 的週期將資金提領出來
 1. 提領時可以選擇在那個鏈將資金提領到那個鏈
-1. User invokes Paytocol -> CCTP 2.0 (how to?)
+1. User invokes Paytocol invokes CCTP 2.0 (how to?)
 
 
-### 🌊 意圖網路模式
+### 🌊 意圖網路模式 (current)
 
 #### 使用者進行贊助
 當使用者創建一個支付請求時，資訊將根據「使用 dApp 支付」的方式將代幣利用
 1. 使用者可以透過 dApp 使用收款人地址、金額、代幣地址、期限和接收人地址來支付代幣
-1. 利用 1inch 將非穩定幣轉為穩定幣的計價額度
+1. 利用 1inch 將非穩定幣轉為穩定幣的計價額度 (1inch swap api)
 1. 將穩定幣轉為生息資產 (how to?)
 1. 將換出的穩定幣/生息資產，收款人地址，贊助週期等資訊寫入 backend 後轉入合約
 
 #### Guardian (only show in system diagram)
 用來驗證鏈上交易是否完成，能對一個訂單進行狀態的改變，例如 驗證 close 或是挑戰 open。
 
-#### Solver
+#### Paytocol Solver
 當有一筆贊助的訂單出現時，Solver 可以跟 backend 取得訂單資訊，並且進一步去根據抵押存款來取得訂單的結算權。
 根據 blocktime 來決定時間完成與否。
-他可以是一個 cross chain streaming protocol 的生態
+他可以是一個 cross chain streaming protocol 的生態。
 
 #### 被贊助者提領資金
 Solver 需要根據 blocktime 在正負 1 小時內將訂單完成
 1. 收款方可以在後台設定提領時選擇在那個鏈與錢包收款
-1. Solver 需要 invokes Paytocol -> CCTP 2.0 (how to?)
+1. Solver 需要 invokes Paytocol -> CCTP 2.0
 
-### 💸 多帳戶免合約互動
+### 💸 多帳戶免合約互動 (轉帳)
 
+CREATE2 算出地址
+提領/建立時再佈合約
 
+Circle 資產管理 CCTP 2.0 支付
+
+#### Solver 
+- 中心化 (Backend) 取得帳戶 intent
+- 去中心化 (合約佈署) 取得帳戶 intent
+
+#### 如何知道每個帳戶的用途
+- 中心化 (Backend
+- 去中心化 (合約佈署
 
 
 ## Under discussion
@@ -71,3 +83,6 @@ Solver 需要根據 blocktime 在正負 1 小時內將訂單完成
 - 如何防止雙重支付
     - 中心化方式：中央伺服器記錄所有交易
     - 去中心化方式：
+
+## Other 
+如何產生槓桿效應。
