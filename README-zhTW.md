@@ -1,4 +1,4 @@
-# Paytocol
+# Paytocol (paytocol.xyz)
 
 ## 獎勵贊助
 - Circle，基於 CCTP2.0 讓用戶可以在任意鏈將資金提領出來或是存入合約來贊助
@@ -37,7 +37,7 @@
 #### Solver
 當有一筆贊助的訂單出現時，Solver 可以跟 backend 取得訂單資訊，並且進一步去根據抵押存款來取得訂單的結算權。
 根據 blocktime 來決定時間完成與否。
-他可以是一個 Streaming 跨鏈的生態。
+他可以是一個 cross chain streaming protocol 的生態
 
 #### 被贊助者提領資金
 Solver 需要根據 blocktime 在正負 1 小時內將訂單完成
