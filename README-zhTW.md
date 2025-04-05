@@ -7,7 +7,7 @@
 - ~~World Mini App~~
 - ~~1inch funsion+ 是否能夠發 postMessage~~
 
-## 主題情境 (下述二選一?)
+## 主題情境
 
 
 ### 🌊 意圖網路模式 (current)
@@ -24,9 +24,10 @@
 用來驗證鏈上交易是否完成，能對一個訂單進行狀態的改變，例如 驗證 close 或是挑戰 open。
 
 #### Paytocol Solver
-當有一筆贊助的訂單出現時，Solver 可以跟 backend 取得訂單資訊，並且進一步去根據抵押存款來取得訂單的結算權。
-根據 blocktime 來決定時間完成與否。
-他可以是一個 cross chain streaming protocol 的生態。
+當有一筆贊助的訂單出現時，Solver 可以跟 backend/合約 取得訂單資訊，並且進一步去根據抵押存款來取得訂單的結算權。
+- 根據 blocktime 來決定時間完成與否。
+- 負責處理生息跨鏈後的行為與提領給用戶
+- 他可以是一個 cross chain streaming protocol 的生態。
 
 #### 被贊助者提領資金
 Solver 需要根據 blocktime 在正負 1 小時內將訂單完成
