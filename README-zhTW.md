@@ -7,7 +7,7 @@
 
 ## 主題情境 (下述二選一?)
 
-### 使用 dApp 支付
+### 💰 使用 dApp 支付 
 
 #### 使用者進行贊助
 當使用者創建一個支付請求時，資訊將根據「使用 dApp 支付」的方式將代幣利用
@@ -22,7 +22,7 @@
 1. User invokes Paytocol -> CCTP 2.0 (how to?)
 
 
-### 意圖網路模式
+### 🌊 意圖網路模式
 
 #### 使用者進行贊助
 當使用者創建一個支付請求時，資訊將根據「使用 dApp 支付」的方式將代幣利用
@@ -31,17 +31,22 @@
 1. 將穩定幣轉為生息資產 (how to?)
 1. 將換出的穩定幣/生息資產，收款人地址，贊助週期等資訊寫入 backend 後轉入合約
 
-#### Guardian
+#### Guardian (only show in system diagram)
 用來驗證鏈上交易是否完成，能對一個訂單進行狀態的改變，例如 驗證 close 或是挑戰 open。
 
 #### Solver
 當有一筆贊助的訂單出現時，Solver 可以跟 backend 取得訂單資訊，並且進一步去根據抵押存款來取得訂單的結算權。
 根據 blocktime 來決定時間完成與否。
+他可以是一個 Streaming 跨鏈的生態。
 
 #### 被贊助者提領資金
 Solver 需要根據 blocktime 在正負 1 小時內將訂單完成
 1. 收款方可以在後台設定提領時選擇在那個鏈與錢包收款
 1. Solver 需要 invokes Paytocol -> CCTP 2.0 (how to?)
+
+### 💸 多帳戶免合約互動
+
+
 
 
 ## Under discussion
