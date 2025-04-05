@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytocol - Cross-chain Payment Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@shadcn/ui@latest/dist/shadcn-ui.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #684F2A;
+            --color-secondary: #9C6F38;
+            --color-dark: #322D1F;
+            --color-accent: #A14C21;
+            --color-light: #CBA66E;
+        }
+        body {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            background-color: #322D1F;
+            min-height: 100vh;
+            color: var(--color-light);
+        }
+        .ghibli-card {
+            background-color: rgba(156, 111, 56, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(156, 111, 56, 0.2);
+        }
+        .ghibli-button {
+            background-color: #CBA66E;
+            color: #322D1F;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .ghibli-button:hover {
+            background-color: #9C6F38;
+            color: #CBA66E;
+        }
+        .content-card {
+            border-bottom: 1px solid rgba(156, 111, 56, 0.1);
+            margin: 0 -2rem;
+            padding: 0 2rem;
+        }
+        .content-card:last-child {
+            border-bottom: none;
+        }
+        .chain-tag {
+            color: #CBA66E;
+            border-bottom: 1px solid #684F2A;
+        }
+        .title-text {
+            color: #CBA66E;
+        }
+        .subtitle-text {
+            color: rgba(156, 111, 56, 0.8);
+        }
+        .value-text {
+            color: #CBA66E;
+            font-weight: 700;
+        }
+        .payment-item {
+            border-bottom: 1px solid rgba(156, 111, 56, 0.1);
+            padding-bottom: 1rem;
+        }
+        .payment-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .avatar {
+            border: none;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="p-12">
+    <div class="flex space-x-12 overflow-x-auto">
+        <!-- Subscription Page -->
+        <section class="ghibli-card min-w-[480px] p-8 space-y-8">
+            <div class="content-card pb-8">
+                <div class="flex items-center space-x-6">
+                    <img src="nic-ghipli.png" alt="User Avatar" class="w-20 h-20 rounded-lg object-cover avatar">
+                    <div>
+                        <h2 class="title-text text-2xl font-bold mb-2">Subscription Plan</h2>
+                        <p class="subtitle-text text-sm">Set up your recurring payment plan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="content-card py-6">
+                    <h3 class="subtitle-text text-sm mb-2">Total Payment Amount</h3>
+                    <p class="value-text text-3xl">2.5 ETH</p>
+                </div>
+
+                <div class="content-card py-6">
+                    <h3 class="subtitle-text text-sm mb-2">Payment Schedule</h3>
+                    <p class="title-text">0.5 ETH monthly, 5 payments in total</p>
+                </div>
+
+                <div class="content-card py-6">
+                    <h3 class="subtitle-text text-sm mb-2">Execution Time</h3>
+                    <p class="title-text">Automatic execution on the 1st of each month</p>
+                </div>
+            </div>
+
+            <button class="ghibli-button w-full py-4 px-6 text-center text-lg">
+                Confirm Subscription
+            </button>
+        </section>
+
+        <!-- Author Page -->
+        <section class="ghibli-card min-w-[480px] p-8 space-y-8">
+            <div class="content-card pb-8">
+                <div class="flex items-center space-x-6">
+                    <img src="nic-ghipli.png" alt="Author Avatar" class="w-20 h-20 rounded-lg object-cover avatar">
+                    <div>
+                        <h2 class="title-text text-2xl font-bold mb-2">Author Dashboard</h2>
+                        <p class="subtitle-text text-sm">View your payment status</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="content-card py-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="subtitle-text text-sm mb-2">Monthly Income</h3>
+                            <p class="value-text text-3xl">1.8 ETH</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="subtitle-text text-sm mb-2">From 3 chains</p>
+                            <div class="flex space-x-4">
+                                <span class="chain-tag text-xs">Ethereum</span>
+                                <span class="chain-tag text-xs">Polygon</span>
+                                <span class="chain-tag text-xs">Arbitrum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card py-6">
+                    <h3 class="subtitle-text text-sm mb-4">Upcoming Payments</h3>
+                    <div class="space-y-4">
+                        <div class="payment-item">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="value-text text-xl">0.5 ETH</p>
+                                    <p class="subtitle-text text-sm mt-1">From @user1</p>
+                                </div>
+                                <p class="title-text text-sm">May 1st</p>
+                            </div>
+                        </div>
+                        <div class="payment-item">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="value-text text-xl">0.3 ETH</p>
+                                    <p class="subtitle-text text-sm mt-1">From @user2</p>
+                                </div>
+                                <p class="title-text text-sm">May 3rd</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
