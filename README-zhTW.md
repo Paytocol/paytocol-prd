@@ -2,9 +2,10 @@
 
 ## 獎勵贊助
 - Circle，基於 CCTP2.0 讓用戶可以在任意鏈將資金提領出來或是存入合約來贊助
-- 1inch，用戶可以選擇用什麼代幣來支付，會先轉為 USDC / 換為可生息的利率
-- World Mini App
-- 1inch funsion+ 是否能夠發 postMessage
+- 存入特定池子來生利息
+- ~~1inch，用戶可以選擇用什麼代幣來支付，會先轉為 USDC / 換為可生息的利率~~
+- ~~World Mini App~~
+- ~~1inch funsion+ 是否能夠發 postMessage~~
 
 ## 主題情境 (下述二選一?)
 
@@ -14,9 +15,10 @@
 #### 使用者進行贊助
 當使用者創建一個支付請求時，資訊將根據「使用 dApp 支付」的方式將代幣利用
 1. 使用者可以透過 dApp 使用收款人地址、金額、代幣地址、期限和接收人地址來支付代幣
-1. 利用 1inch 將非穩定幣轉為穩定幣的計價額度 (1inch swap api)
-1. 將穩定幣轉為生息資產 (how to?)
-1. 將換出的穩定幣/生息資產，收款人地址，贊助週期等資訊寫入 backend 後轉入合約
+1. ~~利用 1inch 將非穩定幣轉為穩定幣的計價額度 (1inch swap api)~~
+2. 將穩定幣，收款人地址，贊助週期等資訊寫入 backend 與合約互動
+3. 將穩定幣利用 CCTP 跨鏈到 Base 的 Paytocol 合約
+4. Solver 幫忙從合約存進會生息資產的 Morpho 協議 再將資產轉回 Paytocol 合約
 
 #### Guardian (only show in system diagram)
 用來驗證鏈上交易是否完成，能對一個訂單進行狀態的改變，例如 驗證 close 或是挑戰 open。
@@ -29,7 +31,7 @@
 #### 被贊助者提領資金
 Solver 需要根據 blocktime 在正負 1 小時內將訂單完成
 1. 收款方可以在後台設定提領時選擇在那個鏈與錢包收款
-1. Solver 需要 invokes Paytocol -> CCTP 2.0
+2. Solver 需要 invokes Paytocol 將生息資產從 Morpho 換回然後轉進收款方
 
 
 ## Under discussion
